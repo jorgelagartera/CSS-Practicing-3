@@ -22,7 +22,7 @@ body {
 
 /* Header */
 header {
-    background-color: #677d6a;
+    background-color: #677d6ab5;
     color: #1a3636;
     padding: 20px;
     display: flex;
@@ -148,18 +148,29 @@ main {
 
 .form-section form {
     display: grid;
-    gap: 10px;
+    gap: 15px;
+    background: #1a36363c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-section label {
     font-weight: bold;
 }
 
-.form-section input, .form-section textarea {
+.form-section input, .form-section textarea, .form-section select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #d6bd98;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-section input:focus, .form-section textarea:focus, .form-section select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+    outline: none;
 }
 
 .form-section button {
@@ -174,6 +185,37 @@ main {
 
 .form-section button:hover {
     background-color:#677d6a77;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-check input[type="checkbox"] {
+    display: none;
+}
+
+.form-check input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: #d6bd98;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-check input[type="checkbox"]:checked + label::before {
+    background-color: #1a36368c;
+    border-color: #4CAF50;
+    content: '\2713';
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
 }
 
 /* Table Section */
@@ -193,12 +235,12 @@ main {
 }
 
 .table-section th {
-    background-color: #677d6a77;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 footer {
-    background-color: #677d6a;
+    background-color: #677d6ab5;
     color: #1a3636;
     text-align: center;
     padding: 10px;
